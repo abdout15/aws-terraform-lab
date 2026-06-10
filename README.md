@@ -36,6 +36,17 @@ Internet → Internet Gateway → Route Table → Public Subnet → EC2 (Nginx)
 * Git
 * GitHub
 
+## Skills Demonstrated
+
+- AWS Cloud Infrastructure
+- Terraform Infrastructure as Code (IaC)
+- Linux Administration
+- Git & GitHub
+- Networking Fundamentals
+- Security Groups
+- EC2 Deployment
+- Nginx Configuration
+
 ## Auteur
 
 Abdoulaye Traoré
