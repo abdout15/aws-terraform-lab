@@ -1,4 +1,5 @@
 # AWS Terraform Lab
+![CI](https://github.com/abdout15/aws-terraform-lab/actions/workflows/ci.yml/badge.svg)
 
 ## Description
 
