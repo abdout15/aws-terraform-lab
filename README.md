@@ -141,9 +141,8 @@ aws-terraform-lab/
 ├── .gitignore               # Sensitive files exclusion
 └── README.md                # Project documentation
 
-AWS ✅
-Terraform ✅
-Docker ✅
-GitHub Actions ✅
-Linux ✅
-Networking ✅
+AWS ✅  Terraform ✅ Docker ✅ GitHub Actions ✅    Linux ✅    Networking ✅
+
+
+
+
