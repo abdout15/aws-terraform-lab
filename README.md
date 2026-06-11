@@ -1,31 +1,105 @@
-# AWS Terraform Lab
-![CI](https://github.com/abdout15/aws-terraform-lab/actions/workflows/ci.yml/badge.svg)
+## Project Structure
 
-## Description
+### Backend Infrastructure
 
-Projet de démonstration AWS et Terraform mettant en œuvre les principes d'Infrastructure as Code (IaC).
+The backend infrastructure is used to store and secure the Terraform state remotely.
 
-### Fonctionnalités
+**Components:**
 
-* Création d'un backend Terraform distant avec Amazon S3 et verrouillage d'état via DynamoDB.
-* Déploiement d'une infrastructure AWS complète avec Terraform :
+* Amazon S3 Bucket for Terraform state storage
+* Amazon DynamoDB Table for state locking
+* Terraform backend configuration
 
-  * VPC
-  * Subnet public
-  * Internet Gateway
-  * Route Table
-  * Security Group
-  * Instance EC2 Amazon Linux 2023
-* Automatisation de la configuration serveur avec `user_data` pour installer et configurer Nginx.
-* Mise en œuvre des mécanismes Terraform `create_before_destroy` et `prevent_destroy`.
-* Gestion du code source avec Git et GitHub.
-* Validation, planification et déploiement de l'infrastructure via Infrastructure as Code (IaC).
+**Purpose:**
 
-## Architecture
+* Centralized Terraform state management
+* Team collaboration support
+* State locking protection
 
-Internet → Internet Gateway → Route Table → Public Subnet → EC2 (Nginx)
+---
 
-## Technologies utilisées
+### AWS Infrastructure (Terraform)
+
+Infrastructure provisioned using Terraform.
+
+**Resources Created:**
+
+* VPC
+* Public Subnet
+* Internet Gateway
+* Route Table
+* Route Table Association
+* Security Group
+* EC2 Instance
+
+**Purpose:**
+
+* Provide a secure AWS environment
+* Host the application
+* Manage networking and security
+
+---
+
+### Application Layer (Docker)
+
+Application containerized using Docker.
+
+**Components:**
+
+* Dockerfile
+* Nginx Web Server
+* Custom HTML page
+
+**Purpose:**
+
+* Package the application
+* Ensure portability across environments
+* Simplify deployment
+
+---
+
+### Continuous Integration (GitHub Actions)
+
+CI pipeline implemented using GitHub Actions.
+
+**Workflow:**
+
+* Checkout source code
+* Terraform validation
+* Docker image build
+* Pipeline status reporting
+
+**Purpose:**
+
+* Validate infrastructure code
+* Verify Docker image build
+* Automate quality checks
+
+---
+
+## Architecture Overview
+
+GitHub Repository
+↓
+GitHub Actions (CI)
+↓
+Terraform Validation
+↓
+Docker Build
+↓
+AWS Infrastructure
+↓
+EC2 Instance
+↓
+Docker Container
+↓
+Nginx Web Server
+↓
+Web Application
+
+---
+
+## Technologies Used
 
 * AWS
 * Terraform
@@ -33,37 +107,21 @@ Internet → Internet Gateway → Route Table → Public Subnet → EC2 (Nginx)
 * Amazon VPC
 * Amazon S3
 * Amazon DynamoDB
+* Docker
 * Nginx
 * Git
 * GitHub
+* GitHub Actions
+
+---
 
 ## Skills Demonstrated
 
-- AWS Cloud Infrastructure
-- Terraform Infrastructure as Code (IaC)
-- Linux Administration
-- Git & GitHub
-- Networking Fundamentals
-- Security Groups
-- EC2 Deployment
-- Nginx Configuration
-
-
-## Repository Structure
-
-```text
-aws-terraform-lab/
-├── backend/                 # Terraform remote state backend (S3 + DynamoDB)
-├── .github/workflows/       # GitHub Actions CI pipeline
-├── main.tf                  # AWS infrastructure resources
-├── provider.tf              # AWS provider and backend configuration
-├── variables.tf             # Terraform variable definitions
-├── outputs.tf               # Infrastructure outputs
-├── Dockerfile               # Docker image definition
-├── index.html               # Sample web application
-├── .gitignore               # Sensitive files exclusion
-└── README.md                # Project documentation
-
-## Auteur
-
-Abdoulaye Traoré
+* Infrastructure as Code (IaC)
+* AWS Cloud Infrastructure
+* Docker Containerization
+* CI Automation
+* Linux Administration
+* Networking Fundamentals
+* Infrastructure Automation
+* Cloud Deployment
