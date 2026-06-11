@@ -125,3 +125,25 @@ Web Application
 * Networking Fundamentals
 * Infrastructure Automation
 * Cloud Deployment
+
+## Repository Structure
+
+```text
+aws-terraform-lab/
+├── backend/                 # Terraform remote state backend (S3 + DynamoDB)
+├── .github/workflows/       # GitHub Actions CI pipeline
+├── main.tf                  # AWS infrastructure resources
+├── provider.tf              # AWS provider and backend configuration
+├── variables.tf             # Terraform variable definitions
+├── outputs.tf               # Infrastructure outputs
+├── Dockerfile               # Docker image definition
+├── index.html               # Sample web application
+├── .gitignore               # Sensitive files exclusion
+└── README.md                # Project documentation
+
+AWS ✅
+Terraform ✅
+Docker ✅
+GitHub Actions ✅
+Linux ✅
+Networking ✅
